@@ -1,44 +1,44 @@
 # Tutorial
 
-This **tutorial** is written for developers to **teach and explain** a step-by-step introduction to Strapi. (The [Quick Start Guide](quick-start.md) is a more concise **How-to** version.) This tutorial takes you through the beginning steps of how you start a project like **"FoodAdvisor"** ([Github](https://github.com/strapi/foodadvisor/))([Demo](https://foodadvisor.strapi.io/)).
+Этот **tutorial** написан чтобы **учить и объяснять** разработчикам пошаговое введение в Strapi. ( [Инструкция по началу работы](quick-start.md) является более кратким **How-to** версией .) Этот учебник проведет вас через начальные шаги, по созданию проекта **"FoodAdvisor"** ([Github](https://github.com/strapi/foodadvisor/))([Demo](https://foodadvisor.strapi.io/)).
 
-You get a good overview of the features developers love found in Strapi.
+Вы получите хороший обзор возможностей, которые разработчики любят в Strapi.
 
 <iframe width="800" height="450" src="https://www.youtube.com/embed/vulcVRQ4X8A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-By following this tutorial, you install and create your first Strapi project.
+Следуя этому руководству, вы установите и создадите свой первый Strapi проект.
 
 ::: tip NOTE
 
-You need to have **_Node.js and npm_** installed on your system before following these steps. If you do not have Node.js and npm installed (or are not sure), please visit our [Installation Requirements](install-requirements.md).
+Вам нужно иметь установленные **_Node.js и npm_** в вашей системе, прежде чем следовать этим шагам. Если у вас нет Node.js и npm, пожалуйста, посетите наши [Требования к установке](install-requirements.md).
 
 :::
 
-**Table of Contents**
+**Содержание**
 
 [[toc]]
 
-## 1. Install Strapi and create a project
+## 1. Установите Strapi и создайте проект
 
-- Navigate to your parent `Projects/` directory from your command line.
+- Перейдите к родительской папке `Projects/` в вашей командной строке.
 
-**Note:** In this tutorial, the example assumes a **Projects** folder on your **Desktop**. However, this is not required, and you may put your project where you want.
+**Note:** В этом уроке пример предполагает **Projects** папку на вашем **Desktop**. Однако это не обязательно, и вы можете поместить свой проект туда, где вы хотите.
 
-Path: `~/Desktop/Projects/`
+Путь: `~/Desktop/Projects/`
 
-Use **only one** of the following commands to create a new Strapi project:
+Используем **только одну** из следующих команд, чтобы создать новый проект Strapi:
 
 ---
 
-- Use **yarn** to install the Strapi project (**recommended**). [Install yarn with these docs](https://yarnpkg.com/lang/en/docs/install/)
+- Для **yarn** чтобы установить Strapi проект (**рекомендуется**). [Установите yarn по этой документации](https://yarnpkg.com/lang/en/docs/install/)
 
 ```bash
 yarn create strapi-app my-project --quickstart
 ```
 
-**or**
+**или**
 
-- Use **npm/npx** to install the Strapi project
+- Используя **npm/npx** установить проект Strapi
 
 ```bash
 npx create-strapi-app my-project --quickstart
@@ -46,20 +46,20 @@ npx create-strapi-app my-project --quickstart
 
 ---
 
-The command creates a Strapi project `my-project/` folder within your parent `Projects/` directory.
+Команда создает проект Strapi в папке `my-project/` в вашей родительской папке `Projects/` .
 
 ::: tip NOTE
 
-When you create a new Quick Start(`--quickstart`) project, Strapi downloads the node modules and the Strapi files needed. Using `--quickstart` automatically completes an **additional** step of **building the administration panel** for Strapi and then **starting** Strapi for you. This opens the browser for you and brings you to the [Welcome](http://localhost:1337/admin/plugins/users-permissions/auth/register) page.
+Когда вы создаете новый Quick Start(`--quickstart`) проект, Strapi загружает модули node и необходимые файлы Strapi. С помощью `--quickstart` автоматически выполняет **дополнительные** шаги **построение административной панели** для Strapi и затем **запускает** Strapi. Это открывает браузер и переносит вас на страницу [Welcome](http://localhost:1337/admin/plugins/users-permissions/auth/register).
 
 :::
 
 ::: tip NOTE
-You can replace the `my-project` name with any name you want. E.g., `yarn create strapi-app my-foodadvisor-project --quickstart` creates a folder `./Projects/my-foodadvisor-project`.
+Вы можете заменить имя `my-project` любым другим по вашему выбору. Например, `yarn create strapi-app my-foodadvisor-project --quickstart` создает папку `./Projects/my-foodadvisor-project`.
 
 :::
 
-You see something like this. The output below indicates that your Strapi project is being downloaded and installed.
+Вы видите что-то вроде этого. Вывод ниже показывает, что ваш проект Strapi загружается и устанавливается.
 
 ```bash
 yarn create v1.17.3
@@ -75,38 +75,38 @@ Creating a quickstart project.
 Creating files.
 Dependencies installed successfully.
 
-Your application was created at /Users/paulbocuse/Desktop/Projects/my-project.
+Ваше приложение было создано в /Users/paulbocuse/Desktop/Projects/my-project.
 
-Available commands in your project:
+Доступные команды в вашем проекте:
 
   yarn develop
-  Start Strapi in watch mode.
+  Стартует Strapi в режиме наблюдения за изменением кода.
 
   yarn start
-  Start Strapi without watch mode.
+  Стартует Strapi без режима наблюдения за изменением кода.
 
   yarn build
-  Build Strapi admin panel.
+  Сборка админки Strapi.
 
   yarn strapi
-  Display all available commands.
+  Показать все доступные команды.
 
-You can start by doing:
+Вы можете начать командой:
 
   cd /Users/paulbocuse/Desktop/Projects/my-project
   yarn develop
 
-Running your Strapi application.
+Запускающей ваше Strapi приложение.
 
 ```
 
-Next, you notice the following that builds your Strapi administration panel and automatically starts up Strapi:
+Затем, вы заметили следующее, что создает панель администрирования Strapi и автоматически запускается Strapi:
 
 ```bash
 > my-project@0.1.0 develop /Users/paulbocuse/Desktop/Projects/my-project
 > strapi develop
 
-Building your admin UI with development configuration ...
+Создание пользовательского интерфейса администратора с настройкой разработки ...
 
 ✔ Webpack
   Compiled successfully in 52.21s
@@ -129,499 +129,499 @@ Building your admin UI with development configuration ...
 ![Strapi Registration Page](../assets/getting-started/tutorial/strapi-beta-registration-page.png 'Strapi Registration Page')
 
 ::: tip NOTE
-Using the `--quickstart` flag installs Strapi using an [SQLite](https://www.sqlite.org/index.html) database. You may, at any time, leave off the **--flag**, but you need to follow a few configuration steps for your database choice. **You need to have your database choice installed and running locally before creating your project.**
+С помощью `--quickstart` флага устанавливает Страпи, используя [SQLite](https://www.sqlite.org/index.html) БД. Вы можете в любое время оставить **--flag**, но вам нужно выполнить несколько шагов настройки для выбора базы данных. **Перед созданием проекта необходимо, чтобы база данных была установлена ​​и работала локально..**
 
-**Note:** An **SQLite** database is an excellent database to use for prototyping and _developing_ Strapi projects. **SQLite** is a light database that ports effortlessly to the other relational databases (**MySQL**, **PostgreSQL**, and **MariaDB**). It is recommended to **develop** with SQLite and to use another relational database (MySQL, PostgreSQL or MariaDB) in production.
+**Note:**  **SQLite** база данных является отличной базой данных для прототипирования и _developing_ проектов Strapi. **SQLite** это легкая база данных, которая легко переносится на другие реляционные базы данных (**MySQL**, **PostgreSQL**, и **MariaDB**). Рекомендуется **разрабатывать** с SQLite и использовать другую реляционную базу данных (MySQL, PostgreSQL или MariaDB) на production.
 
-**Note:** If you would like to use **MongoDB** in production, you need to [install, run, and use MongoDB to develop your Strapi project (in development)](../guides/databases.md#mongodb-installation).
+**Note:** Если вы хотели бы использовать **MongoDB** на production, вам следует [установить, запустить и использовать MongoDB и для разработки Strapi проекта (в development)](../guides/databases.md#mongodb-installation).
 :::
 
-You are now ready to create a new **Administrator** and new front-end **User**.
+Теперь вы готовы создать новый **Administrator** и нового front-end **User**.
 
-## 2. Create an Administrator and front-end User
+## 2. Создание Administrator и front-end пользователя
 
-The first step is to create an **Administrator** (or "root user") for your project. An **Administrator** has all administrator privileges and access rights. (You can read more about why **Administrators** and front-end **Users** are separate [here](https://blog.strapi.io/why-we-split-the-management-of-the-admin-users-and-end-users/).)
+Первым шагом является создание **Administrator** (или "root user") для вашего проекта.  **Administrator** имеет все права администратора и права доступа. (Вы можете прочитать больше о том, почему **Administrators** и front-end **Users** являются отдельными [здесь](https://blog.strapi.io/why-we-split-the-management-of-the-admin-users-and-end-users/).)
 
-You need to complete the following fields:
+Вам необходимо заполнить следующие поля:
 
-- **Username**, create a username for login access to your project, e.g., `paulbocuse`
-- **Password**, create a unique password for logging into your project
-- **Email address**, this is used for recovery
-- Check **Receive news**, this is optional but **recommended**
-- Click the **Ready to Start** button
+- **Username**, создать имя пользователя для входа в ваш проект, e.g., `paulbocuse`
+- **Password**, создать уникальный пароль для входа в свой проект
+- **Email address**, это используется для восстановления
+- Отметить **Receive news**, это необязательно, но **рекомендуется**
+- Нажмите кнопку **Ready to Start** 
 
-![Completed Registration Page](../assets/getting-started/tutorial/completed-registration-page.png 'Completed Registration Page')
+![Завершенная страница регистрации](../assets/getting-started/tutorial/completed-registration-page.png 'Completed Registration Page')
 
-After your **Administrator** registration is complete, you see the Strapi _Administration Dashboard_:
+После регистрации **Administrator** , вы увидите Strapi _Administration Dashboard_:
 
 ![Strapi Admininstration Dashboard](../assets/getting-started/tutorial/strapi-dashboard.png 'Strapi Admin Dashboard')
 
-**Administrators** and front-end **Users** are separate roles.
+**Administrators** и front-end **Users** отдельные роли.
 
-**A.** An **Administrator** has access and rights to the Administration Dashboard (or backend) of Strapi. **Administrators** can, for example, add content, add plugins, and upload images.
+**A.**  **Administrator** имеет доступ и права на Administration Dashboard (или backend) Strapi. **Administrators** может, например, добавить контент, добавить плагины и загрузить изображения.
 
-**B.** A front-end **User** is someone who interacts with your project through the front-end. A front-end **User** can, for example, be an "Author" of an article, make a purchase, has an account, leaves a review, or leaves a comment.
+**B.** front-end **User** это тот, кто взаимодействует с вашим проектом через front-end. Front-end **User** может, например, стать «Автором» статьи, совершить покупку, иметь аккаунт, оставить отзыв или оставить комментарий.
 
-Up until this point, you have created an **Administrator**, and so you next want to create a front-end **User**.
+До этого момента вы создали **Administrator**, и поэтому вы хотите создать интерфейс **User**.
 
-**Note:** It is not necessary to always create a front-end **User** for your **Administrators**; in this case, the **Administrator** is also a front-end **User** as an "Author" of content in the application.
+**Note:** Нет необходимости всегда создавать интерфейс **User** для **Administrators**; в этом случае **Administrator** также front-end **User** как «Автор» контента в приложении.
 
-- Click on `Users` located under **CONTENT TYPES** in the left-hand menu
-- Click the blue **+ Add New User** button in the top right corner
-- Next, complete the `Username`, `Email`, and `Password` fields
-- Select `ON` for the **Confirmed** toggle field
-- To the right, under **Role**, select `Authenticated`
-- Save the new user by clicking the blue **Save** button (top right)
+- Кликните `Users`  под **CONTENT TYPES** в левом меню
+- Кликните голубую кнопку **+ Add New User** в правом верхнем углу
+- Заполните поля `Username`, `Email`, и `Password`
+- Выделите `ON` для **Подтверждения** полей переключения
+- Справа под **Role**, выделите `Authenticated`
+- Сохранить нового пользователя, нажав синиюю кнопку **Save** (вверху справа)
 
-![New front-end User](../assets/getting-started/tutorial/new-front-end-user.png 'New front-end User')
+![новый фронт-энд User](../assets/getting-started/tutorial/new-front-end-user.png 'New front-end User')
 
-You are now ready to create your first **Content Type**.
+Теперь вы готовы создать свой первый **Content Type**.
 
-## 3. Create a new Content Type called "Restaurant"
+## 3. Создание нового Content Type с именем "Restaurant"
 
-**Content Types** are a collection of entered data represented by fields. For example, a **Content Type** called `Restaurant` may be intended to display information regarding restaurants. A `restaurant` **Content Type** could have fields that include a `name`, the main `image`, and a `description` - _at a minimum_. However, a `restaurant` could also have a `category` or multiple `categories`, and a `restaurant` could perhaps need to show `hoursofoperation`.
+**Content Types** представляют собой набор введенных данных, представленных полями. Например **Content Type**  `Restaurant` может быть предназначен для отображения информации о ресторанах. `restaurant` **Content Type** может иметь поля, которые включают в себя `name`, главное `image`, и `description` - _это минимум_. Тем не менее,`restaurant` также может иметь `category` или несколько `categories`, и `restaurant` может быть, нужно показать `hoursofoperation`.
 
-A **Content Type** can be considered a sort of _blueprint_ for the data created. In other words, a **Content Type** is the schema of the data structure.
+**Content Type** можно считать своего рода _blueprint_ для созданных данных. Другими словами, **Content Type** это схема структуры данных.
 
-The next section guides you through the steps needed for each of these above **Content Type** fields.
+В следующем разделе описываются шаги, необходимые для каждого из них выше. **Content Type** поля.
 
 ::: tip NOTE
 
-Additional **Restaurant** themed **Content Types** and fields can be seen in the [FoodAdvisor demo site](https://foodadvisor.strapi.io/).
+Дополнительные **Ресторан** тематические **Content Type** и поля можно увидеть в [FoodAdvisor demo site](https://foodadvisor.strapi.io/).
 
 :::
 
-### The Restaurant Content Type
+### Restaurant Content Type
 
-- Go to the **Content Type Builder** plugin, located in the left menu: Under **PLUGINS**: --> **Content Type Builder**
+- Перейдите к плагину **Content Type Builder**, находится в левом меню: в **PLUGINS**: --> **Content Type Builder**
 
-You are now able to see the three available **Content Types**. At this point, three Content Types are available `Permission`, `Role`, and `Users`.
+Теперь вы можете увидеть три доступных **Content Types**. На данный момент доступны три Content Types `Permission`, `Role`, и `Users`.
 
 ![Content Type Dashboard](../assets/getting-started/tutorial/content-type-dashboard.png 'Content Type Dashboard')
 
-You need to create a new **Content Type** for `Restaurants`.
+Вам нужно создать новый **Content Type** для `Restaurants`.
 
-1. Complete these steps to **Add a Restaurant Content Type**:
+1. Выполните эти шаги, чтобы **добавить Restaurant Content Type**:
 
-- Click the `+ Add A Content Type` link (under existing **CONTENT TYPES**)
-- Enter a **Name** for your new **Content Type** (call this `restaurant`), and you can write `Restaurant Listings` for the **Description**
-- Click the `Done` button
+- Кликните ссылку `+ Add A Content Type` (под имеющимся **CONTENT TYPES**)
+- Введите **Name** для вашего нового **Content Type** (вызовите этот `restaurant`), и вы сможете написать `Restaurant Listings` для **Description**
+- Кликните кнопку `Done`
 
-![Singular Name Entries for Content Type](../assets/getting-started/tutorial/singular-name-entry.png 'Singular Name Entries or Content Type')
+![Записи единственного имени для типа контента](../assets/getting-started/tutorial/singular-name-entry.png 'Singular Name Entries или Content Type')
 
 ::: tip NOTE
 
-The Content Type **Name** is always **singular**. For example, `restaurant` not `restaurants`.
+Тип контента **Name** всегда **единственное число**. Например, `restaurant` не `restaurants`.
 
 :::
 
-2. You are now at the **Field Selection** panel:
+1. Вы сейчас на панели **Field Selection** :
 
-You may add your first field, a **String** field for the **Restaurant** name.
+Вы можете добавить свое первое поле, **String** для имени **Restaurant**.
 
 ![Field Section Panel](../assets/getting-started/tutorial/field-selection-panel.png 'Field Selection Panel')
 
-- Click on the `String` field
-- In the **Name** field, type `name`
+- Нажмите поле `String` 
+- В поле **Name**, типа `name`
 
 ![Restaurant Name Input Field](../assets/getting-started/tutorial/restaurant-name-input-field.png 'Restuarant Name Input Field')
 
-- Click on the `ADVANCED SETTINGS` tab
-- Check the `Required field` checkbox
-- Check the `Unique field` checkbox
+- Кликните по вкладке `ADVANCED SETTINGS`
+- Отметьте `Required field` checkbox
+- Отметьте `Unique field` checkbox
 
 ![Restaurant Name Advanced Settings](../assets/getting-started/tutorial/restaurant-name-advanced-settings.png 'Restuarant Name Advanced Settings')
 
-- Click the `+ Add Another Field` button
+- Нажмите кнопку `+ Add Another Field` 
 
-You are now ready to add the second field, a **Rich Text** field for the **Restaurant** description.
+Теперь вы готовы добавить второе поле, поле **Rich Text** для описания **Restaurant**.
 
 ![Field Section Panel](../assets/getting-started/tutorial/field-selection-panel.png 'Field Selection Panel')
 
-- Click the `Rich Text` field
+- Нажмите поле `Rich Text` 
 
-- In the **Name** field, type `description`
+- В поле **Name** , введите `description`
 
 ![Restaurant Rich Text Field](../assets/getting-started/tutorial/restaurant-rich-text-field.png 'Restuarant Rich Text Field')
 
-- Click the `+ Add Another Field` button
+- Нажмите кнопку `+ Add Another Field`
 
-You are now ready to add the third field, a **Media** field for the **Restaurant** thumbnail image.
+Теперь вы готовы добавить третье поле, поле **Media** для маленького изображения **Restaurant**.
 
 ![Field Section Panel](../assets/getting-started/tutorial/field-selection-panel.png 'Field Selection Panel')
 
-- Click the `Media` field
+- Кликните поле `Media`
 
-- In the **Name** field, type `image`
+- В поле **Name**, введите `image`
 
 ![Restaurant Rich Image Field](../assets/getting-started/tutorial/restaurant-image-field.png 'Restuarant Rich Image Field')
 
-- Click on the **ADVANCED SETTINGS** tab
-- Check the `Required field` checkbox
+- Нажмите на вкладку **ADVANCED SETTINGS**
+- Отметьте `Required field` checkbox
 
 ![Restaurant Rich Image Field Advanced Settings](../assets/getting-started/tutorial/restaurant-image-field-advanced-settings.png 'Restuarant Rich Image Field Advanced Settings')
 
-- Click the `Done` button
+- Нажмите на `Done` кнопку
 
-Your new Content Type called **Restaurant** is ready to be **Saved**.
+Ваш новый Content Type называющийся **Restaurant** готов к **Saved**.
 
 ![Restaurant Save Screen](../assets/getting-started/tutorial/restaurant-save-screen.png 'Restuarant Save Screen')
 
-- Click the `Save` button
+- Нажмите на `Save` button
 
-- Wait for Strapi to restart
+- Подождите пока Strapi перезапуститься
 
 ![Strapi Restart](../assets/getting-started/tutorial/strapi-restart.png 'Strapi Restart')
 
-After Strapi has restarted, you are ready to continue to create the `Category` **Content Type**.
+После перезапуска Strapi, вы готовы продолжать создавать `Category` **Content Type**.
 
-## 4. Create a new Content Type called "Category"
+## 4. Создание нового Content Type называемого "Category"
 
-### The Category Content Type
+### Category Content Type
 
-The `Category` **Content Type** will have a **String** field named `category`, and a **Relation field** with a **Many to Many** relationship.
+ `Category` **Content Type** будет иметь **String** поле с именем `category`, и **Relation field** с отношением **Многие ко многим** .
 
 ![Category Add Content Type](../assets/getting-started/tutorial/category-add-content-type.png 'Category Add Content Type')
 
-1. Complete these steps to **add a Category Content Type**:
+1. Выполните эти шаги, чтобы **добавить Category Content Type**:
 
-- Click the `+ Add A Content Type` link
-- Enter a **Name** for your new **Content Type** (call this `category`)
-- Enter `Restaurant Categories` for the **Description**
+- Нажмите на ссылку `+ Add A Content Type` 
+- Введите **Name** для вашего нового **Content Type** (назовите его `category`)
+- Введите `Restaurant Categories` для **Description**
 
 ![Category Name Field](../assets/getting-started/tutorial/category-name-field.png 'Category Name Field')
 
-- Click the `Done` button
+- Нажмите на кнопку `Done`
 
-2. Now, you are ready to add fields to your **Category**:
+1. Теперь вы готовы добавить поля к вашему **Category**:
 
 ![Category Fields](../assets/getting-started/tutorial/category-fields.png 'Category Fields')
 
-- Click on the `String` field
-- In the **Name** field, type `name`
+- Нажмите поле `String`
+- В поле **Name**, введите `name`
 
 ![Category Name Entry Field](../assets/getting-started/tutorial/category-name-entry-field.png 'Category Name Entry Fields')
 
-- Click on the `ADVANCED SETTINGS` tab
-- Check the `Required field` checkbox
-- Check the `Unique field` checkbox
+- Нажмите вкладку `ADVANCED SETTINGS`
+- Отметьте чекбокс `Required field`
+- Отметьте чекбокс `Unique field`
 
 ![Category Advanced Settings](../assets/getting-started/tutorial/category-advanced-settings.png 'Category Advanced Settings')
 
-- Click the `+ Add Another Field` button
+- Нажмите на кнопку `+ Add Another Field`
 
-You are now ready to add the second field, a **Relation** field for creating a **Many to Many** relationship between the **Category** and **Restaurant** Content Types.
+Теперь вы готовы добавить второе поле, поле **Relation** для создания отношения **Многое ко многим** отношения между Content Types **Category** и **Restaurant**.
 
-- Click on the `Relation` field
+- Нажми на поле `Relation`
 
 ![Category Add Field Panel](../assets/getting-started/tutorial/category-add-field-panel.png 'Category Add Field Panel')
 
-This brings you to the **Add New Relation** screen.
+Это приводит вас к экрану **Add New Relation**.
 
 ![Category New Relation Field](../assets/getting-started/tutorial/category-new-relation-field.png 'Category New Relation Field')
 
-- Click on _right dropdown_ with `Permission (Users-Permissions)` and change it to `Restaurant`
+- нажмите на _right dropdown_ с `Permission (Users-Permissions)` и измените его на `Restaurant`
 
 ![Category Relation Dropdown](../assets/getting-started/tutorial/category-relation-dropdown.png 'Category Relation Dropdown')
 
-- Click the `Many to Many` icon (from the middle icon choices). It should now read, **"Categories has and belongs to many Restaurants"**
+- Нажмите на иконку `Many to Many` (от выбора средней иконки). Это читается как, **"Категории есть и принадлежит многим ресторанам"**
 
 ![Category Relation Many to Many](../assets/getting-started/tutorial/category-relation-many-to-many.png 'Category Relation Many to Many')
 
-- Click the `Done` button
+- Нажмите на кнопку `Done`
 
 ![Category Save](../assets/getting-started/tutorial/category-save.png 'Category Save')
 
-- Click the `Save` button
+- Нажмите на кнопку `Save`
 
-- Wait for Strapi to restart
+- Подождите, пока Strapi перезапустится
 
 ![Category Save Strapi Restart](../assets/getting-started/tutorial/category-save-strapi-restart.png 'Category Save Strapi Restart')
 
-After Strapi has restarted, you are ready to create a `Group and Repeatable Field` called **"Hours of Operations."**
+После перезапуска Strapi вы готовы создать `Группа и повторяемое поле` (Группа и повторяемое поле)  **"Hours of Operations."** (Часы работы)
 
-## 5. Create a new Group, and Repeatable Field called, "Hours of Operation"
+## 5. Создание новой Group, and Repeatable Field - "Hours of Operation"
 
-### The Hours of Operation Group
+### Группа Hours of Operation
 
-The `Restaurant` Content Type has a **Group** field named `Hours_of_operation`. This Group is **Repeatable** and for displaying the **Opening hours** and **Closing hours** of a **Restaurant**.
+`Restaurant` Content Type имеет поле **Group** с именем `Hours_of_operation`. Эта группа **Repeatable** (повторяемая) и для отображения **Opening hours** и **Closing hours** у **Restaurant**.
 
-1. Complete these steps to **add a new Group**:
+1. Выполните эти шаги, чтобы **добавить новую группу**:
 
-- Click the `+ Add A Group` link to add a new **Group**
-- Enter a **Name** for your new **Group** (call this `hours_of_operation`), and you can write `Hours of Operation` for the **Description**
+- Нажмите на ссылку `+ Add A Group` чтобы добавить новую группу **Group**
+- Введите **Name** для вашего нового **Group** (называемого `hours_of_operation`), и вы можете написать `Hours of Operation` для **Description**
 
 ![Hours of Operation Add Group](../assets/getting-started/tutorial/hours-of-operation-add-group.png 'Hours of Operation Add Group')
 
-- Click the `Done` button
+- Нажмите на кнопку `Done` 
 
-2. Now, you are ready to add fields to your **Group**:
+2. Теперь вы готовы добавить поля к вашему **Group**:
 
 ![Hours of Operation Add Fields](../assets/getting-started/tutorial/hours-of-operation-add-fields.png 'Hours of Operation Add Fields')
 
-- Click on the `String` field
-- In the **Name** field, type `day_interval`. This is to enter the **Day (or Days)** with **Hours of Operation**
+- Нажмите на поле `String`
+- В поле **Name** , введите `day_interval`. Это чтобы ввести **Day (or Days)** с **Hours of Operation**
 
 ![Hours of Operation Days](../assets/getting-started/tutorial/hours-of-operation-days.png 'Hours of Operation Days')
 
-- Click on the `ADVANCED SETTINGS` tab
-- Check the `Required field` checkbox
+- Нажмите вкладку `ADVANCED SETTINGS`
+- Проверьте чкбокс `Required field` 
 
 ![Hours of Operation Days Advanced Settings](../assets/getting-started/tutorial/hours-of-operation-days-advanced-settings.png 'Hours of Operation Days Advanced Settings')
 
-- Click the `+ Add Another Field`
+- Нажмите на `+ Add Another Field`
 
-You are now ready to add a second field, another **String** field for the **Opening Hours**.
+Теперь вы готовы добавить второе поле, другое поле **String** для **Opening Hours**.
 
 ![Hours of Operation Opening Hours](../assets/getting-started/tutorial/hours-of-operation-opening-hours.png 'Hours of Operation Opening Hours')
 
-- Click on the `String` field
-- In the **Name** field, type `opening_hours`
+- Нажмите на поле `String` 
+- В поле **Name** , введите `opening_hours`
 
 ![Hours of Operation Opening Hours Name](../assets/getting-started/tutorial/hours-of-operation-opening-hours-name.png 'Hours of Operation Opening Hours Name')
 
-- Click the `+ Add Another Field` button
+- Нажмите на кнопку `+ Add Another Field` 
 
-You are now ready to add a third field, another **String** field for the **Closing Hours**.
+Теперь вы готовы добавить третье поле, еще одно поле **String** для **Closing Hours**.
 
 ![Hours of Operation Closing Hours](../assets/getting-started/tutorial/hours-of-operation-closing-hours.png 'Hours of Operation Closing Hours')
 
-- Click on the `String` field
-- In the **Name** field, type `closing_hours`
+- Нажмите на поле `String`
+- В поле **name** введите `closing_hours`
 
 ![Hours of Operation Closing Hours Name](../assets/getting-started/tutorial/hours-of-operation-closing-hours-name.png 'Hours of Operation Closing Hours Name')
 
-- Click the `Done` button
+- Нажмите на кнопку `Done`
 
 ![Hours of Operation Save](../assets/getting-started/tutorial/hours-of-operation-save.png 'Hours of Operation Save')
 
-- Click the `Save` button
-- Wait for Strapi to restart
+- Нажмите на кнопку `Save` 
+- Подождите, пока Strapi перезапустится
 
 ![Hours of Operation Strapi Restart](../assets/getting-started/tutorial/hours-of-operation-strapi-restart.png 'Hours of Operation Strapi Restart')
 
-After Strapi has restarted, you are ready to assign this **Hours_of_operation** group to the **Restaurant** Content Type.
+После перезапуска Strapi вы готовы назначить эту группу **Hours_of_operation** на **Restaurant** Content Type.
 
-**Note:** It would be possible to assign the **Hours_of_operation** group to another **Content Type**, let's say, a **Cafe** Content Type. You have the option to reuse this group across your application.
+**Note:** Можно было бы назначить группу **Hours_of_operation** другому **Content Type**, скажем, **Cafe** Content Type. У вас есть возможность повторно использовать эту группу в вашем приложении.
 
-3. Next, you need to assign the **Hours_of_operation** Group to the **Restaurant** Content Type.
+1. Далее вам нужно назначить **Hours_of_operation** Group на **Restaurant** Content Type.
 
-To access the **Hours_of_operation** Group from within the **Restaurant** Content Type, you need to **edit** the **Restaurant** Content Type in the **Content Type Builder**.
+Чтобы получить доступ к **Hours_of_operation** Group изнутри **Restaurant** Content Type, вам надо **edit**  **Restaurant** Content Type в **Content Type Builder**.
 
-- If needed, navigate back to the **Content Type Builder**
+- При необходимости вернитесь к **Content Type Builder**
 
 ![Edit Restaurant Content Type](../assets/getting-started/tutorial/edit-restaurant-content-type.png 'Edit Restaurant Content Type')
 
-- Click on the `Restaurant` Content Type, under **CONTENT TYPES**
+- НАжмите на `Restaurant` Content Type, в **CONTENT TYPES**
 
 ![Edit Restaurant Add Another Field](../assets/getting-started/tutorial/edit-restaurant-add-another-field.png 'Edit Restaurant Add Another Field')
 
-- Click one of the `+ Add Another Field` buttons, to add the **Group**
+- Нажмите на кнопку `+ Add Another Field` , чтобы добавить **Group**
 
 ![Edit Restaurant Group Field](../assets/getting-started/tutorial/edit-restaurant-group-field.png 'Edit Restaurant Group Field')
 
-- Click on the `Group` field
+- Нажмите поле `Group` 
 
-- Ensure `hours_of_operation` is displayed in the **Select a group** dropdown
-- Provide a **name** for this group in the **Restaurant** Content Type. E.g., `restaurant_hours`
-- Check the `Repeatable field` box
+- обеспечьте `hours_of_operation` is displayed в выпадающем **Select a group**
+- Предоставьте **name** для этой группы в **Restaurant** Content Type. E.g., `restaurant_hours`
+- Отметьте `Repeatable field` 
 
 ![Restaurant Group Inputs](../assets/getting-started/tutorial/restaurant-group-inputs.png 'Restaurant Group Inputs')
 
-- Click on the `ADVANCED SETTINGS` tab
-- Check the `Required field` checkbox
+- Нажми на вкладку `ADVANCED SETTINGS`
+- Отметьте `Required field`
 
 ![Restaurant Group Advanced Settings](../assets/getting-started/tutorial/restaurant-group-advanced-settings.png 'Restaurant Group Advanced Settings')
 
-- Click the `Done` button
+- Нажмите на `Done` button
 
 ![Restaurant Group Save](../assets/getting-started/tutorial/restaurant-group-save.png 'Restaurant Group save')
 
-- Click the `Save` button
+- Нажмите на `Save` button
 
-- Wait for Strapi to restart
+- Подождите, пока Strapi перезапустится
 
 ![Restaurant Group Strapi Restart](../assets/getting-started/tutorial/restaurant-group-strapi-restart.png 'Restaurant Group Strapi Restart')
 
-After Strapi has restarted, you are ready to continue to the next section where you customize the user-interface of your **Restaurant** Content Type.
+После рестарта Strapi, Вы готовы перейти к следующему разделу где вы настраиваете пользовательский интерфейс вашего **Restaurant** Content Type.
 
-4. Next, you edit the **View Settings** for the new **Hoursofoperation Group** from within the **Content Manager**.
+1. Далее вы редактируете **View Settings** для нового **Hoursofoperation Group** изнутри **Content Manager**.
 
-You can _drag and drop_ fields into a different layout, as well as, _rename the labels_ as two examples of how you can customize the user interface for your **Content Types**.
+Вы можете _drag and drop_ поля в different layout, также как и, _rename the labels_ в качестве двух примеров того, как вы можете настроить пользовательский интерфейс для вашего **Content Types**.
 
-- Navigate to and click on the `Content Manager`, under **PLUGINS** in the left-hand menu
+- Перейдите к и нажмите на `Content Manager`, в **PLUGINS** в меню слева
 
 ![Content Manager](../assets/getting-started/tutorial/content-manager.png 'Content Manager')
 
-- Click on the `Groups(1)` tab
+- Нажмите на вкладку `Groups(1)`
 
 ![Content Manager Groups Tab](../assets/getting-started/tutorial/content-manager-groups-tab.png 'Content Manager Groups Tab')
 
-- Click on `Hours_of_operation` to modify the **View Settings**
+- Нажмите на `Hours_of_operation` для изменения **View Settings**
 
 ![Content Manager Hoursofoperation](../assets/getting-started/tutorial/content-manager-hoursofoperation.png 'Content Manager Hoursofoperation')
 
-- Rearrange the fields and make them more user friendly. Grab the `opening_hours` and slide it next to `closing_hours`
+- Переставьте поля и сделайте их более удобными для пользователя. Зажмите `opening_hours` и сдвиньте его рядом с`closing_hours`
 
 ![Content Manager Hoursofoperation Rearrange Fields](../assets/getting-started/tutorial/content-manager-hoursofoperation-rearrange-fields.png 'Content Manager Hoursofoperation Rearrange Fields')
 
-Next, you will change the **field labels** to make them easier to understand:
+Далее вы измените **field labels** чтобы их было легче понять:
 
-- Click on the `day_interval` field
-- Edit the **Label** to read, `Day (or Days)`
-- Add a **Description**, `You can type in one day or a series of days to complete this field. E.g. "Tuesday" or "Tues - Wed"`
+- Нажми на поле `day_interval`
+- Измените **Label** читать, `Day (or Days)`
+- Добавьте **Description**, `Вы можете ввести один день или серию дней, чтобы заполнить это поле. E.g. "Tuesday" или "Tues - Wed"`
 
 ![Content Manager Hoursofoperation Day Interval](../assets/getting-started/tutorial/content-manager-hoursofoperation-day-interval.png 'Content Manager Hoursofoperation Day Interval')
 
-- Click on the `opening_hours` field
-- Edit the **Label** to read, `Opening Hours`
+- Нажми на поле `opening_hours` 
+- Измените **Label** to read, `Opening Hours`
 
 ![Content Manager Hoursofoperation Opening Hours](../assets/getting-started/tutorial/content-manager-hoursofoperation-day-opening-hours.png 'Content Manager Hoursofoperation Day Opening Hours')
 
-- Click on `closing_hours` field
-- Edit the **Label** to read, `Closing Hours`
+- Нажмите поле `closing_hours`
+- Измените **Label** to read, `Closing Hours`
 
 ![Content Manager Hoursofoperation Closing Hours](../assets/getting-started/tutorial/content-manager-hoursofoperation-day-closing-hours.png 'Content Manager Hoursofoperation Day Closing Hours')
 
-- Click the `Save` button, and then the `Confirm` button to save your settings
+- Нажмите на кнопку `Save`, и затем кнопку `Confirm` сохранить ваши настройки
 
-Your settings have now saved.
+Ваши настройки теперь сохранены.
 
-Whenever anyone enters in information for a **Restaurant**, the entry form is clear. With Strapi you can modify these and more settings to provide the best experience possible.
+Всякий раз, когда кто-то вводит информацию для **Restaurant**, форма заявки понятна. С помощью Strapi вы можете изменить эти и другие параметры, чтобы обеспечить наилучшее впечатление.
 
-You are ready to start inputting actual content.
+Вы готовы начать вводить фактический контент.
 
-## 6. Manage and add content to a "Restaurant" Content Type
+## 6. Управление и добавление контента в "Restaurant" Content Type
 
-You are now ready to add some **Restaurants** and **Categories**.
+Теперь вы готовы добавить некоторые **Restaurants** и **Categories**.
 
-1. You are now going to enter a new **Restaurant**
+1. Вы сейчас собираетесь ввести новый **Restaurant**
 
-- Navigate to and click on the `Restaurants`, under **CONTENT TYPES** in the left-hand menu
+- Перейдите к и нажмите на `Restaurants`, в **CONTENT TYPES** в левом меню
 
 ![Restaurants Content Type](../assets/getting-started/tutorial/restaurants-content-type.png 'Restaurants Content Type')
 
-- Next, click on the **+ Add new Restaurant** button (in the top right corner)
-- Enter in the following information for your first **Restaurant** called **Biscotte Restaurant**
-  - In the **Name** field, enter `Biscotte Restaurant`
-  - In the **Description** field, enter `Welcome to Biscotte restaurant! Restaurant Biscotte offers a cuisine based on fresh, quality products, often local, organic when possible, and always produced by passionate producers.`
-  - Upload an **Image** to represent the **Restaurant**
+- Далее нажмите на кнопку **+ Add new Restaurant** (в правом верхнем углу)
+- Введите следующую информацию для вашего первого **Restaurant** под названием **Biscotte Restaurant**
+  - В поле **Name** , введите `Biscotte Restaurant`
+  - В поле **Description** , введите `Добро пожаловать в Biscotte ресторан! Ресторан Biscotte предлагает кухню, основанную на свежих, качественных продуктах, часто местных, органических, когда это возможно, и всегда производимых страстными производителями.`
+  - Загрузить **Image** представляющий **Restaurant**
 
-**Note:** At this point, you would generally select the **Categories** for this **Restaurant**. You have not entered any **Categories**, so you do this step after entering this first **Restaurant**.
+**Note:** На этом этапе вы обычно выбираете **Categories** для этого **Restaurant**. Вы не ввели ни одного **Categories**, так что вы делаете этот шаг после ввода этого первого **Restaurant**.
 
 ![Restaurant Content Type Basic Data](../assets/getting-started/tutorial/restaurant-content-type-basic-data.png 'Restaurant Content Type Basic Data')
 
-- Next scroll down to **RestaurantHours|(0)** and click the `+ ADD NEW ENTRY` button
-  - In the **Create an Entry** section, enter the following details:
-    - In the **Days (or Days)** field, enter `Sun - Mon`
-    - In the **Opening Hours** field, enter `Closed`
-    - **Skip** the **Closing Hours** field, as this **Restaurant** is closed all day
-  - Click the `+ ADD NEW ENTRY` button to create another new entry
-    - In the **Days (or Days)** field, enter `Tues - Fri`
-    - In the **Opening Hours** field, enter `12:00`
-    - In the **Closing Hours** field, enter `22:30`
-  - Click the `+ ADD NEW ENTRY` button to create the last entry
-    - In the **Days (or Days)** field, enter `Sat`
-    - In the **Opening Hours** field, enter `11:30`
-    - In the **Closing Hours** field, enter `16:00`
+- Далее прокрутите вниз до **RestaurantHours|(0)** и нажмите на кнопку `+ ADD NEW ENTRY`
+  - В секции **Create an Entry** , введите следующие данные:
+    - В поле **Days (or Days)**, введите `Sun - Mon`
+    - В поле **Opening Hours**, введите `Closed`
+    - **Skip** поле **Closing Hours** , как это **Restaurant** закрыт весь день
+  - Нажмите на кнопку `+ ADD NEW ENTRY` создать еще одну новую запись
+    - В поле **Days (or Days)** , введите `Tues - Fri`
+    - В поле **Opening Hours** , введите `12:00`
+    - В поле **Closing Hours** , введите `22:30`
+  - Нажмите на кнопку `+ ADD NEW ENTRY` создать последнюю запись
+    - В поле **Days (or Days)** введите `Sat`
+    - В поле **Opening Hours** введите `11:30`
+    - В поле **Closing Hours** введите `16:00`
 
-You have now entered in all the information necessary, for your first **Restaurant**.
+Теперь вы ввели всю необходимую информацию, для вашего первого **Restaurant**.
 
 ![Restaurants Entry](../assets/getting-started/tutorial/restaurants-entry.png 'Restaurants Entry')
 
-- **Scroll up** and click the `Save` button
+- **Scroll up** и нажмите на кнопку `Save` 
 
-Next, you need to enter in some **Categories** that can relate to the above and other **Restaurants**.
+Далее нужно войти в некоторые **Categories** что может относиться к вышесказанному и другим **Restaurants**.
 
-- Navigate to and click on the `Categories`, under **CONTENT TYPES** in the left-hand menu
+- Перейдите к и нажмите на `Categories`, в **CONTENT TYPES** В left-hand меню
 
 ![Categories Entry](../assets/getting-started/tutorial/categories-content-type.png 'Categories Entry')
 
-You are going to enter two **Categories**, but you could add as many **Categories** as you need to. Later, you can add additional **Categories** and assign them to existing and new **Restaurants**.
+Вы собираетесь ввести два **Categories**, но вы могли бы добавить так много **Categories** как вам нужно. Позже вы можете добавить дополнительные **Categories** и назначить их существующим и новым **Restaurants**.
 
-- Click on the `+ Add New Category` button
-  - In the **Name** field, enter `French food`
-  - In the **Restaurants(0)** dropdown, select `Biscotte Restaurant`
+- Нажмите кнопку `+ Add New Category`
+  - В поле **Name** , введите `French food`
+  - В выпадающем **Restaurants(0)** , выделите `Biscotte Restaurant`
 
 ![Categories Entry 1](../assets/getting-started/tutorial/categories-entry-1.png 'Categories Entry 1')
 
-- Click the `Save` button
+- Нажмите на кнопку `Save`
 
-You now enter your second **Category**.
+Теперь вы вводите свой второй **Category**.
 
-- Click on the `+ Add New Category` button
-  - In the **Name** field, enter `Brunch`
-  - In the **Restaurants(0)** dropdown, select `Biscotte Restaurant`
+- Нажмите на кнопку `+ Add New Category`
+  - В поле **Name**, введите `Brunch`
+  - В поле **Restaurants(0)** dropdown, выделите `Biscotte Restaurant`
 
 ![Categories Entry 2](../assets/getting-started/tutorial/categories-entry-2.png 'Categories Entry 2')
 
-- Click the `Save` button
+- Нажмите на  кнопку `Save`
 
-You have now entered your first **Restaurant** Content Type. You have also assigned two **Categories** to this **Restaurant**. Your next step is to set the **Roles and Permissions**.
+Вы ввели свой первый **Restaurant** Content Type. Вы также назначили два **Categories** к этому **Restaurant**. Ваш следующий шаг - установить **Roles and Permissions**.
 
-## 7. Set Roles and Permissions
+## 7. Установить роли и разрешения
 
-By default, Strapi publishes all **Content Types** with restricted permissions. Which means you have to explicitly give permissions to each **Content Type** you create. You are going to give **Public** API (or URL) access to both the **Restaurant** Content Type and **Category** Content Type.
+По умолчанию, Strapi публикует все **Content Types** с ограниченными разрешениями. Это означает, что вы должны явно дать разрешения каждому созданному вами **Content Type**. Вы собираетесь дать **Public** API (или URL) доступ к обоим **Restaurant** Content Type и **Category** Content Type.
 
-- Click on the `Roles & Permissions` menu item, under **PLUGINS** in the left-hand-menu
-- Locate and click on the **Roles & Permissions** menu item under **PLUGINS** on the left menu
+- Нажми на `Roles & Permissions` menu item, в **PLUGINS** В left-hand-menu
+- Перейдите и нажмите на **Roles & Permissions** пункт меню под **PLUGINS** в левом меню
 
 ![Roles and Permissions](../assets/getting-started/tutorial/roles-and-permissions.png 'Roles And Permissions')
 
-- Next, click on the **Public** Role
+- Next, нажми на **Public** Role
 
 ![Roles and Permissions Public Role](../assets/getting-started/tutorial/roles-and-permissions-public-role.png 'Roles And Permissions Public Role')
 
-- Next, scroll down under **Permissions** and locate the **Restaurant** and **Category** Content Types
-- Click the checkbox for **find** and **findone** in the **Restaurant** Content Type
-- Click the checkbox for **find** and **findone** in the **Category** Content Type
+- Далее прокрутите вниз под **Permissions** и locate the **Restaurant** и **Category** Content Types
+- Нажмите на checkbox для **find** и **findone** В **Restaurant** Content Type
+- Нажмите на checkbox для **find** и **findone** В **Category** Content Type
 
 ![Roles and Permissions Find Permissions](../assets/getting-started/tutorial/roles-and-permissions-find-permissions.png 'Roles And Permissions Find Permissions')
 
-- Scroll back to the top, and click the **Save** button
+- Вернитесь к началу и нажмите на **Save** button
 
 ![Roles and Permissions Save](../assets/getting-started/tutorial/roles-and-permissions-save.png 'Roles And Permissions Save')
 
-You have now opened the API and are ready to consume your content.
+Вы теперь открыли API и готовы потреблять ваш контент.
 
-## 8. Consume the Content Type API
+## 8. Потребление Content Type API
 
-Each of your **Content Types** are accessible by following their automatically generated routes.
+Каждый из ваших **Content Types** доступны по их автоматически сгенерированным маршрутам.
 
-Both your **Restaurant** and **Category** Content Types can now be accessed:
+Оба ваши **Restaurant** и **Category** Content Types теперь можно получить доступ:
 
-- In your browser, follow `http://localhost:1337/restaurants` to return the data for the allowed **Find** value of your **Restaurant** Content Type
+- В вашем браузере, перейдите `http://localhost:1337/restaurants` чтобы получить данные для разрешенного **Find** value of your **Restaurant** Content Type
 
 ![Restaurant Api](../assets/getting-started/tutorial/restaurant-api.png 'Restaurant API')
 
-- In your browser, follow `http://localhost:1337/categories` to return the data for the allowed **Find** value of your **Category** Content Type
+- В вашем браузере, перейдите `http://localhost:1337/categories` вернуть данные для разрешенного **Find** value of your **Category** Content Type
 
 ![Category Api](../assets/getting-started/tutorial/category-api.png 'Category API')
 
 ::: tip NOTE
 
-If you have incorrectly or not set permissions to your content type, you get a **"403"** permission error. See the below example.
+Если вы неправильно установили разрешения для своего типа контента, вы получите **"403"** ошибка разрешения. Смотрите пример ниже.
 
-Forbidden Access Looks like this:
+Запрещенный доступ выглядит так:
 
 ![Forbidden Access to Restaurant Content Type](../assets/getting-started/tutorial/permission-forbidden-access.png 'Forbidden Access to Restaurant Content Type')
 :::
 
 ::: tip NOTE
 
-If you would like to see the route of any specific **Content Type**, you need to navigate to the **Content Type** under the **Roles and Permissions** plugin and click the ⚙️ next to the value. On the right, you see the route:
+Если вы хотите увидеть маршрут какого-либо конкретного **Content Type**, вам нужно перейти к **Content Type** в плагин **Roles and Permissions** и нажмите на ⚙️ next to the value. Справа вы видите маршрут:
 
 ![Permission Routes](../assets/getting-started/tutorial/permission-routes.png 'Permission Routes')
 
 :::
 
 ::: tip CONGRATULATIONS
-👏 Congratulations, you have now completed the **Strapi Getting Started Tutorial**. Where to go next?
+👏 Поздравляем, вы завершили **Strapi Getting Started Tutorial**. Куда пойти дальше?
 
-- Learn how to use Strapi with React ([Gatsby](https://blog.strapi.io/building-a-static-website-using-gatsby-and-strapi) or [Next.js](https://blog.strapi.io/strapi-next-setup/)) or Vue.js ([Nuxt.js](https://blog.strapi.io/cooking-a-deliveroo-clone-with-nuxt-vue-js-graphql-strapi-and-stripe-setup-part-1-7/)).
-- Read the **concepts** to deep dive into Strapi
-- Get help on [StackOverflow](https://stackoverflow.com/questions/tagged/strapi)
-- Read the [source code](https://github.com/strapi/strapi), [contribute](https://github.com/strapi/strapi/blob/master/CONTRIBUTING.md) or [give a star](https://github.com/strapi/strapi) on GitHub
-- Follow us on [Twitter](https://twitter.com/strapijs) to get the latest news
-- [Join the vibrant and active Strapi community](https://slack.strapi.io) on Slack
+- Узнайте, как использовать Strapi с React ([Gatsby](https://blog.strapi.io/building-a-static-website-using-gatsby-and-strapi) или [Next.js](https://blog.strapi.io/strapi-next-setup/)) или Vue.js ([Nuxt.js](https://blog.strapi.io/cooking-a-deliveroo-clone-with-nuxt-vue-js-graphql-strapi-and-stripe-setup-part-1-7/)).
+- Прочтите **concepts** чтобы погрузиться в Strapi
+- Получить помощь по [StackOverflow](https://stackoverflow.com/questions/tagged/strapi)
+- Прочитайте [source code](https://github.com/strapi/strapi), [contribute](https://github.com/strapi/strapi/blob/master/CONTRIBUTING.md) и [give a star](https://github.com/strapi/strapi) в GitHub
+- перейдитеs в [Twitter](https://twitter.com/strapijs) получать последние новости
+- [JoВ vibrant and active Strapi community](https://slack.strapi.io) в Slack
   :::

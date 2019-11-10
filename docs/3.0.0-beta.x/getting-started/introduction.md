@@ -1,18 +1,19 @@
-# Introduction
+# Введение
 
-Welcome to the open source [headless CMS](https://strapi.io) developers love.
+Добро пожаловать в опен-сорсную [headless CMS](https://strapi.io) любимую разработчиками.
 
-## Strapi Documentation
+## Strapi документация
 
-### 👋 Welcome onboard!
+### 👋 Добро пожаловать на борт!
 
-Users love Strapi because it is open source, MIT licensed, fully customizable and based on Node.js. Strapi lets you manage your content and distribute it anywhere. Strapi allows you to securely and privately serve your database from your hosting and server of choice.
+Пользователи любят Strapi, потому что он с открытым исходным кодом, имеет лицензию MIT, полностью настраивается и основан на Node.js.
+Strapi позволяет вам управлять вашим контентом и распространять его где угодно. Strapi позволяет вам безопасно и конфиденциально обслуживать вашу базу данных с вашего хостинга и сервера по вашему выбору.
 
-### Get Started
+### Начнем
 
-You are invited to get started using Strapi. You may explore Strapi by:
+Вам предлагается начать использовать Strapi. Вы можете исследовать Strapi здесь:
 
-1. A [Quick Start Guide](quick-start.md) for more intermediate to advanced developers.
-2. A [Tutorial](quick-start-tutorial.md) for those who prefer a step-by-step introduction.
+1. [Инструкция по началу работы](quick-start.md) для более среднего и продвинутого уровня разработчиков.
+2. [Туториал](quick-start-tutorial.md) для тех, кто предпочитает пошаговое введение.
 
-When you're done getting started, we invite you to join our [community](https://strapi.io/community).
+Когда вы закончите, мы приглашаем вас присоединиться к нашему [коммьюнити](https://strapi.io/community).

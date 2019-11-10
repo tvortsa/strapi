@@ -1,18 +1,18 @@
-# Installation Requirements
+# Требования к установке
 
-This page covers installing the basic requirements for Strapi.
+Эта страница посвящена установке основных требований для Strapi.
 
-## Basic Installation Requirements
+## Основные требования к установке
 
-Strapi only requires [Node.js](https://nodejs.org). The current recommended version to run strapi is `Node v10` (current `LTS`).
+Strapi требуется только [Node.js](https://nodejs.org). Текущая рекомендуемая версия для запуска strapi: `Node v10` (текущий `LTS`).
 
-This is all that is needed before Strapi can run on your local environment.
+Это все, что нужно для запуска Strapi в вашей локальной среде.
 
-## Installing Node.js
+## Установка Node.js
 
-You can install `Node.js` and `npm` for `Windows 10`, `Ubuntu 18.04` and `Mac O/S Mojave` with the following instructions.
+Вы можете установить `Node.js` и `npm` для `Windows 10`, `Ubuntu 18.04` и `Mac O/S Mojave` следующими инструкциями.
 
-#### Installation Instructions for each Operating System:
+#### Инструкции по установке для каждой операционной системы:
 
 :::: tabs cache-lifetime="10" :options="{ useUrlFragment: false }"
 
@@ -20,7 +20,7 @@ You can install `Node.js` and `npm` for `Windows 10`, `Ubuntu 18.04` and `Mac O/
 
 **WINDOWS 10**
 
-### Installing Node.js on Windows 10
+### Установка Node.js на Windows 10
 
 There are several methods to install Node.js on _Windows 10_.
 
@@ -125,10 +125,10 @@ npm -v
 :::
 ::::
 
-### Using Yarn
+### Использование Yarn
 
-You can also use yarn if you want [here](https://yarnpkg.com/en/docs/getting-started) are the instructions to get started with it.
+Вы также можете использовать yarn [здесь](https://yarnpkg.com/en/docs/getting-started) инструкции, чтобы начать с ним.
 
 ::: tip NEXT STEPS
-👏 Congrats, you are all set! Now that Node.js is installed you can continue with the [Quick start guide](quick-start.md).
+👏 Поздравляю, все готово! Теперь, когда Node.js установлен, вы можете продолжить [Инструкция по началу работы](quick-start.md).
 :::
